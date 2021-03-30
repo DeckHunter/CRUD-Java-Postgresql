@@ -16,7 +16,7 @@ public class ConexaoBD {
         String port="5432";
         String db_name="Projeto_Final";
         String username="postgres";
-        String password="alexlima123";
+        String password="";
         try {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection("jdbc:postgresql://"+host+":"+port+"/"+db_name+"", ""+username+"", ""+password+"");
@@ -47,14 +47,14 @@ public class ConexaoBD {
 			while(rs.next()){
 				String nome = rs.getString("Nome_Academia");
 				String local = rs.getString("Local_Academia");
-				BigDecimal preço = rs.getBigDecimal("Preço");
+				BigDecimal preÃ§o = rs.getBigDecimal("PreÃ§o");
 				int ID = rs.getInt("ID_Academia");
 
 				System.out.print("\n================================\n");
 				System.out.print("#       " +"ID: "+ID+"\n");
 				System.out.print("#       " +"Nome: "+nome+" \n");
 				System.out.print("#       " +"Local: "+local+"\n");
-				System.out.print("#       " +"Preço: R$ "+preço+" \n");
+				System.out.print("#       " +"PreÃ§o: R$ "+preÃ§o+" \n");
 				System.out.print("================================\n");
 				
 			}
@@ -96,12 +96,12 @@ public class ConexaoBD {
 				
 				String nome = rs.getString("Nome_Instrutor");
 				int ID = rs.getInt("ID_Instrutor");
-				BigDecimal preço = rs.getBigDecimal("Salario");
+				BigDecimal preÃ§o = rs.getBigDecimal("Salario");
 				
 				System.out.print("\n================================\n");
 				System.out.print("#       " +"ID: "+ID+" \n");
 				System.out.print("#       " +"Nome: "+nome+"\n");
-				System.out.print("#       " +"Salario : R$ "+preço+"\n");
+				System.out.print("#       " +"Salario : R$ "+preÃ§o+"\n");
 				System.out.print("================================\n");
 				
 			}
@@ -120,12 +120,12 @@ public class ConexaoBD {
 				String nome = rs.getString("Nome_Supervisor");
 				int ID = rs.getInt("ID_Supervisor");
 				int ID_A = rs.getInt("ID_Academia_Trabalha");
-				BigDecimal preço = rs.getBigDecimal("Salario");
+				BigDecimal preÃ§o = rs.getBigDecimal("Salario");
 				
 				System.out.print("\n================================\n");
 				System.out.print("#       " +"ID: "+ID+"\n");
 				System.out.print("#       " +"Nome: "+nome+"\n");
-				System.out.print("#       " +"Salario : R$ "+preço+"\n");
+				System.out.print("#       " +"Salario : R$ "+preÃ§o+"\n");
 				System.out.print("#       " +"ID Da Academia : "+ID_A+"\n");
 				System.out.print("================================\n");
 
